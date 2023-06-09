@@ -8,4 +8,4 @@ spec:
     - name: httpd-cont
       image: httpd:2
       ports:
-        - conatainerport: 80
+        - containerPort: 80

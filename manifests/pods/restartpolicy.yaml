@@ -1,0 +1,46 @@
+# always restart the container
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: restartpolicyalways
+spec:
+  restartPolicy: Always
+  containers:
+    - name: alpine
+      image: alpine
+      args:
+        - sleep
+        - 7s
+
+
+# never restart the container
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: restartpolicynever
+spec:
+  restartPolicy: Never
+  containers:
+    - name: alpine
+      image: alpine
+      args:
+        - sleep
+        - 7s
+
+
+# restart onfailure container
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: restartpolicyonfailure
+spec:
+  restartPolicy: OnFailure
+  containers:
+    - name: failure
+      image: alpine
+      args:
+        - sleep
+        - 7s
